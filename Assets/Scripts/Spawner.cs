@@ -4,11 +4,6 @@ using UnityEngine.Pool;
 
 public class Spawner<T> : MonoBehaviour where T : SpawnedObject<T>
 {
-    public int PoolCapacity => _poolCapacity;
-    public int PoolInactive => _pool.CountInactive;
-
-    public int PoolActive => _pool.CountActive;
-
     [SerializeField] private T _prefab;
     [SerializeField] private int _poolCapacity = 5;
     [SerializeField] private int _poolSize = 5;
@@ -16,6 +11,11 @@ public class Spawner<T> : MonoBehaviour where T : SpawnedObject<T>
     private ObjectPool<T> _pool;
 
     public event Action ObjectCreated;
+    public event Action Spawned;
+
+    public int PoolCapacity => _poolCapacity;
+    public int PoolInactive => _pool.CountInactive;
+    public int PoolActive => _pool.CountActive;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Spawner<T> : MonoBehaviour where T : SpawnedObject<T>
         createFunc: () => CreateObject(),
         actionOnGet: (obj) => ActionOnGet(obj),
         actionOnRelease: (obj) => obj.gameObject.SetActive(false),
-        actionOnDestroy: (obj) => Destroy(obj),
+        actionOnDestroy: (obj) => Destroy(obj.gameObject),
         collectionCheck: true,
         defaultCapacity: _poolCapacity,
         maxSize: _poolSize);
@@ -41,6 +41,7 @@ public class Spawner<T> : MonoBehaviour where T : SpawnedObject<T>
 
     protected T Get()
     {
+        Spawned?.Invoke();
         return _pool.Get();
     }
 

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CubeSpawner : Spawner<Cube>
 {
@@ -15,8 +14,7 @@ public class CubeSpawner : Spawner<Cube>
 
         cube.transform.position = new Vector3(randomX, gameObject.transform.position.y, randomZ);
 
-        if (cube.TryGetComponent<Rigidbody>(out Rigidbody rb))
-            rb.velocity = Vector3.zero;
+        cube.ResetParameters();
 
         cube.Died += OnDied;
         CubeSpawned?.Invoke(cube);

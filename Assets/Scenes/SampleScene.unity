@@ -804,6 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 810828330}
+  - component: {fileID: 810828331}
   m_Layer: 5
   m_Name: BombStats
   m_TagString: Untagged
@@ -835,6 +836,22 @@ RectTransform:
   m_AnchoredPosition: {x: 753.05, y: 370.97}
   m_SizeDelta: {x: 476.1, y: 304.16}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &810828331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810828329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c7d66ce08bf414bb7eefdbff3c8117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 468831974}
+  _textSpawn: {fileID: 1795184797}
+  _textCreated: {fileID: 489206526}
+  _textActive: {fileID: 1804968112}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,58 +936,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 37.637, y: 0, z: 0}
---- !u!1 &1631521179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1631521181}
-  - component: {fileID: 1631521180}
-  m_Layer: 0
-  m_Name: CounterSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1631521180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631521179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8053f0b30fe93b42ae087542959f20e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 1679172134}
-  _bombSpawner: {fileID: 468831974}
-  _textSpawnCubes: {fileID: 1738453506}
-  _textSpawnBombs: {fileID: 1795184797}
-  _textCubeCreated: {fileID: 18800770}
-  _textBombCreated: {fileID: 489206526}
-  _textCubeActive: {fileID: 1756608911}
-  _textBombActive: {fileID: 1804968112}
---- !u!4 &1631521181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631521179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7558079, y: 7.08831, z: -12.289333}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1679172131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976168913}
+  - component: {fileID: 1976168914}
   m_Layer: 5
   m_Name: CubeStats
   m_TagString: Untagged
@@ -1809,6 +1775,22 @@ RectTransform:
   m_AnchoredPosition: {x: -756.14, y: 356.34}
   m_SizeDelta: {x: 469.92, y: 333.41}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1976168914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976168912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d0472b5304fad41a3cb66ae2c9ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 1679172134}
+  _textSpawn: {fileID: 1738453506}
+  _textCreated: {fileID: 18800770}
+  _textActive: {fileID: 1756608911}
 --- !u!1 &1988238471
 GameObject:
   m_ObjectHideFlags: 0

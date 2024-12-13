@@ -65,7 +65,9 @@ public class Bomb : SpawnedObject<Bomb>
     {
         float LifeTime = RandomDuration();
         _fadeObject.FadeOut(LifeTime);
+
         yield return new WaitForSeconds(LifeTime);
+
         Explode(GetExployedableObjects(transform.position), transform.position);
         StopCoroutine(_lifeTimeCoroutine);
         Died?.Invoke(this);
