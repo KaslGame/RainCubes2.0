@@ -23,7 +23,7 @@ public class Cube : SpawnedObject<Cube>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent<Platform>(out Platform platform) && _coroutine == null)
+        if (collision.gameObject.TryGetComponent(out Platform platform) && _coroutine == null)
             _coroutine = StartCoroutine(LifeTimer(GenerateNumber()));
     }
 
@@ -45,11 +45,16 @@ public class Cube : SpawnedObject<Cube>
     {
         WaitForSeconds wait = new WaitForSeconds(time);
 
-        _meshRenderer.material.color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        ChangeColor(UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
 
         yield return wait;
 
         Died?.Invoke(this);
         _coroutine = null;
+    }
+
+    private void ChangeColor(Color color)
+    {
+        _meshRenderer.material.color = color;
     }
 }
